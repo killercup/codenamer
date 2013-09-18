@@ -1388,7 +1388,7 @@ var categories = {
     ]
   },
   "california_cities": {
-    "names": "Californian Cities",
+    "name": "Californian Cities",
     "source": "http://www.wolframalpha.com/share/clip?f=d41d8cd98f00b204e9800998ecf8427eue1f1uq3b4",
     "values": [
       "Bakersfield",
