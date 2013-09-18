@@ -14,6 +14,9 @@ angular.module('CodeNamer', [])
 
   res.pickRandomFromCategory = function (category_name) {
     var section, values;
+    if (!category_name) {
+      return '';
+    }
     if (category_name.values && category_name.values.length) {
       values = category_name.values;
     } else {
