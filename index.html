@@ -7,16 +7,20 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css"/>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+  <meta name="description" content="Generate code names" />
+  <meta name="author" content="Pascal Hertleif" />
+  <link rel="payment" href="https://flattr.com/submit/auto?user_id=pascalhertleif&url=http%3A%2F%2Fkillercup.github.io%2Fcodenamer%2F&category=software&title=CodeNamer&language=en_GB" type="text/html" />
 </head>
 <body ng-app="CodeNamer" ng-controller="codename">
-  <header class="jumbotron">
+  <section class="jumbotron">
     <div class="container">
       <h1>
-        <small>Code Name</small>
+        <small>Your Code Name:<br/></small>
         <span class="ng-cloak">{{final_name}}</span>
       </h1>
     </div>
-  </header>
+  </section>
 
   <div class="container">
     <section class="panel panel-default">
@@ -35,7 +39,7 @@
           </select>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary" ng-click="final_name = newName(name_parts)">
+          <button class="btn btn-lg btn-primary" ng-click="final_name = newName(name_parts)">
             Generate!
           </button>
         </div>
@@ -44,8 +48,12 @@
   </div>
 
   <footer class="container">
-    <p>
-      An open source project by <a href="http://pascalhertleif.de">Pascal Hertleif</a>
+    <p class="text-center">
+      An <a href="https://github.com/killercup/codenamer">open source</a> project
+      by <a href="http://pascalhertleif.de">Pascal Hertleif.</a>
+      <a href="https://flattr.com/submit/auto?user_id=pascalhertleif&url=http%3A%2F%2Fkillercup.github.io%2Fcodenamer%2F&category=software&title=CodeNamer&language=en_GB" target="_blank">
+        <img src="//api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" />
+      </a>
     </p>
   </footer>
 
