@@ -14,7 +14,7 @@
 
   <meta name="description" content="Generate code names" />
   <meta name="author" content="Pascal Hertleif" />
-  <link rel="payment" href="https://flattr.com/submit/auto?user_id=pascalhertleif&url=http%3A%2F%2Fkillercup.github.io%2Fcodenamer%2F&category=software&title=CodeNamer&language=en_GB" type="text/html" />
+  <link rel="payment" href="https://flattr.com/submit/auto?user_id=pascalhertleif&amp;url=http%3A%2F%2Fkillercup.github.io%2Fcodenamer%2F&amp;category=software&amp;title=CodeNamer&amp;language=en_GB" type="text/html" />
 </head>
 <body ng-app="CodeNamer" ng-controller="codename">
   <section class="jumbotron">
@@ -33,13 +33,8 @@
           <select class="form-control input-lg"
             ng-model="name_parts[i]"
             ng-init="name_parts[i] = initial_selection[i]"
-            ng-options="cat.name for (key,cat) in categories"
-            >
-            <!--  -->
+            ng-options="cat.name for (key,cat) in categories">
             <option value="">&mdash; Nope &mdash;</option>
-            <!--<option ng-repeat="(key,cat) in categories" value="{{key}}" ng-selected="initial_selection[i] == key">
-              {{cat.name}}
-            </option> -->
           </select>
         </div>
         <div class="form-group">
@@ -55,7 +50,7 @@
     <p class="text-center">
       An <a href="https://github.com/killercup/codenamer">open source</a> project
       by <a href="http://pascalhertleif.de">Pascal Hertleif.</a>
-      <a href="https://flattr.com/submit/auto?user_id=pascalhertleif&url=http%3A%2F%2Fkillercup.github.io%2Fcodenamer%2F&category=software&title=CodeNamer&language=en_GB" target="_blank">
+      <a href="https://flattr.com/submit/auto?user_id=pascalhertleif&amp;url=http%3A%2F%2Fkillercup.github.io%2Fcodenamer%2F&amp;category=software&amp;title=CodeNamer&amp;language=en_GB" target="_blank">
         <img src="//api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" />
       </a>
     </p>
