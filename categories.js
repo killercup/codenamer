@@ -1265,5 +1265,41 @@ var categories = {
       "Turtle",
       "Wolf"
     ]
+  },
+  "imperial": {
+    "name": "Imperial Units",
+    "source": "http://wiki.answers.com/Q/List_of_imperial_units",
+    "values": [
+      "pound",
+      "ounce",
+      "thou",
+      "inch",
+      "foot",
+      "yard",
+      "chain",
+      "furlong",
+      "mile",
+      "league",
+      "fathom",
+      "cable",
+      "nautical",
+      "link",
+      "rod",
+      "perch",
+      "rood",
+      "acre",
+      "gill",
+      "pint",
+      "quart",
+      "gallon",
+      "minim",
+      "scruple",
+      "drachm",
+      "grain",
+      "stone",
+      "quarter",
+      "hundredweight",
+      "ton"
+    ]
   }
 };
