@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css"/>
   <style>
     h1, h2, h3, h4 { word-break: break-word; }
-    .ng-cloak {display: none;}
+    .form-group {margin: 5px;}
   </style>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -16,35 +16,16 @@
   <meta name="author" content="Pascal Hertleif" />
   <link rel="payment" href="https://flattr.com/submit/auto?user_id=pascalhertleif&amp;url=http%3A%2F%2Fkillercup.github.io%2Fcodenamer%2F&amp;category=software&amp;title=CodeNamer&amp;language=en_GB" type="text/html" />
 </head>
-<body ng-app="CodeNamer" ng-controller="codename">
+<body>
   <section class="jumbotron">
     <div class="container">
-      <h1>
+      <h1 id="final_name">
         <small>Your Code Name:<br/></small>
-        <span class="ng-cloak">{{final_name}}</span>
       </h1>
     </div>
   </section>
 
-  <div class="container ng-cloak">
-    <section class="panel panel-default">
-      <form class="panel-body form-inline text-center">
-        <div class="form-group" ng-repeat="i in [0,1,2]">
-          <select class="form-control input-lg"
-            ng-model="name_parts[i]"
-            ng-init="name_parts[i] = initial_selection[i]"
-            ng-options="cat.name for (key,cat) in categories">
-            <option value="">&mdash; Nope &mdash;</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <button class="btn btn-lg btn-primary" ng-click="final_name = newName(name_parts)">
-            Generate!
-          </button>
-        </div>
-      </form>
-    </section>
-  </div>
+  <div class="container" id="selects"></div>
 
   <footer class="container">
     <p class="text-center">
@@ -56,8 +37,11 @@
     </p>
   </footer>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js"></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.string/2.3.0/underscore.string.min.js'></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/reactive-coffee/0.0.5/reactive-coffee.min.js"></script>
   <script src="categories.js"></script>
-  <script src="app.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
