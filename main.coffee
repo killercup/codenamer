@@ -59,7 +59,10 @@ selects = (name_parts, final_name) ->
             click: (ev) ->
               ev.preventDefault()
               final_name.refresh()
-          }, "Generate!"
+          }, [
+            i {class: "icon-random"}, ' '
+            "Generate!"
+          ]
 
           div {class: 'help-block'}, "Click it again!"
         ]

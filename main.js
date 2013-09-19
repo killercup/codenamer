@@ -94,7 +94,11 @@
               ev.preventDefault();
               return final_name.refresh();
             }
-          }, "Generate!"), div({
+          }, [
+            i({
+              "class": "icon-random"
+            }, ' '), "Generate!"
+          ]), div({
             "class": 'help-block'
           }, "Click it again!")
         ])
