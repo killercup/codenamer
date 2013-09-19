@@ -77,6 +77,17 @@ tweetButton = (final_name) ->
     "Tweet"
   ]
 
+adnButton = (final_name) ->
+  a {
+    class: "btn btn-default"
+    target: "_blank"
+    href: bind ->
+      "https://alpha.app.net/intent/post/?text=#{encodeURIComponent 'Codename: '+final_name.get()}&url=#{window.location.origin}"
+  }, [
+    i {class: "icon-adn"}, ' '
+    "ADN"
+  ]
+
 jQuery ($) ->
   if DEBUG
     window.n = name_parts
@@ -90,4 +101,6 @@ jQuery ($) ->
   $('#final_name')
     .append(span(final_name))
   $('#share')
+    .append(adnButton(final_name))
+    .append(" ")
     .append(tweetButton(final_name))
