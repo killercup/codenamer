@@ -4,12 +4,13 @@ bind = rx.bind
 # const
 DEBUG = true
 PARTS = 3
+TWITTER = "killercup"
 
 cats = window.categories
 
-window.n = name_parts = rx.array _(cats).chain().keys().sample(PARTS).value()
+name_parts = rx.array _(cats).chain().keys().sample(PARTS).value()
 
-window.f = final_name = bind ->
+final_name = bind ->
   return console.error name_parts, 'is not cool' unless name_parts?.all?()?.length
 
   name_parts.all()
@@ -65,11 +66,28 @@ selects = (name_parts, final_name) ->
       ]
     ]
 
+tweetButton = (final_name) ->
+  a {
+    class: "btn btn-primary"
+    target: "_blank"
+    href: bind ->
+      "https://twitter.com/share?related=#{TWITTER}&via=#{TWITTER}&text=#{encodeURIComponent 'Codename: '+final_name.get()}&url=#{window.location.origin}"
+  }, [
+    i {class: "icon-twitter"}, ' '
+    "Tweet"
+  ]
+
 jQuery ($) ->
   if DEBUG
     window.n = name_parts
     window.f = final_name
 
   $('body').addClass 'js'
-  $('#selects').append selects(name_parts, final_name)
-  $('#final_name').append span(final_name)
+
+  $('#selects')
+    .append selects(name_parts, final_name)
+
+  $('#final_name')
+    .append(span(final_name))
+  $('#share')
+    .append(tweetButton(final_name))
