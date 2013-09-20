@@ -12,9 +12,9 @@ To change the app code, just edit the `main.coffee` and keep `coffee -wc *.coffe
 
 ## Thanks
 
-- Angular.js
-- Bootstrap3
-- Wikipedia and other sources
+- [reactive.coffee](http://yang.github.io/reactive-coffee/)
+- [Bootstrap 3](http://getbootstrap.com/)
+- Wikipedia and other sources (see `categories.js`)
 
 ## License
 
