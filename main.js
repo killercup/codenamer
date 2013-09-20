@@ -32,12 +32,16 @@
   });
 
   optionsFor = function(categories, selected) {
-    return _.map(cats, function(cat, key) {
+    return _(categories).chain().pairs().sortBy(function(a) {
+      return a[0];
+    }).map(function(_arg) {
+      var cat, key;
+      key = _arg[0], cat = _arg[1];
       return option({
         value: key,
         selected: key === selected
       }, cat.name);
-    });
+    }).value();
   };
 
   sourceInfo = function(categories, selected) {

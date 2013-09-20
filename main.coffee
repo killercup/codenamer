@@ -23,11 +23,15 @@ final_name = bind ->
   .join(" ")
 
 optionsFor = (categories, selected) ->
-  _.map cats, (cat, key) ->
+  _(categories).chain()
+  .pairs()
+  .sortBy((a) -> a[0])
+  .map ([key, cat]) ->
     option {
       value: key
       selected: (key is selected)
     }, cat.name
+  .value()
 
 sourceInfo = (categories, selected) ->
   if '' is selected
