@@ -6,6 +6,8 @@
 
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css"/>
   <style>
+    .needs-js, .js .no-js {display: none;}
+    .js .needs-js {display: block;}
     h1, h2, h3, h4 { word-break: break-word; }
     .form-group {margin: 5px;}
   </style>
@@ -21,13 +23,19 @@
   <header class="jumbotron">
     <div class="container">
       <h1 id="final_name">
-        <small>Your Code Name:<br/></small>
+        <span class="no-js">
+          Code Name Generator
+          <small>Loading&hellip;</small>
+        </span>
+        <small class="needs-js">
+          Your Code Name:<br/>
+        </small>
       </h1>
       <div id="share"></div>
     </div>
   </header>
 
-  <div class="container" id="selects"></div>
+  <section class="container" id="selects"></section>
 
   <footer class="container">
     <p class="text-center">
