@@ -2,9 +2,11 @@ rxt.importTags()
 bind = rx.bind
 
 # const
-DEBUG = true
+DEBUG = false
 PARTS = 3
 TWITTER = "killercup"
+
+parts_ = [0..PARTS-1]
 
 cats = window.categories
 
@@ -42,8 +44,13 @@ sourceInfo = (categories, selected) ->
 
 selects = (name_parts, final_name) ->
   section {class: 'panel panel-default'}, [
-    form {class: 'panel-body form-inline text-center'},
-      [0..PARTS-1].map (i) ->
+    form {
+      class: 'panel-body form-inline text-center'
+      submit: (ev) ->
+        ev.preventDefault()
+        final_name.refresh()
+    },
+      parts_.map (i) ->
         div {class: 'form-group'}, [
           select {
             class: 'form-control input-lg'
@@ -60,9 +67,7 @@ selects = (name_parts, final_name) ->
         div {class: 'form-group'}, [
           button {
             class: 'btn btn-lg btn-primary'
-            click: (ev) ->
-              ev.preventDefault()
-              final_name.refresh()
+            type: 'submit'
           }, [
             i {class: "icon-random"}, ' '
             "Generate!"
