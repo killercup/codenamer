@@ -41,11 +41,11 @@
         if (!alliterate || !first_char) {
           return true;
         } else {
-          return input.charAt(0) === first_char;
+          return input.charAt(0).toUpperCase() === first_char;
         }
       }).sample(1).first().value();
       if (!first_char) {
-        first_char = random_thing.charAt(0);
+        first_char = random_thing.charAt(0).toUpperCase();
       }
       return random_thing;
     }).join(" ").split(" ").map(_.str.capitalize).join(" ");

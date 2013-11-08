@@ -29,12 +29,12 @@ final_name = bind ->
         if !alliterate or !first_char
           true
         else
-          input.charAt(0) is first_char
+          input.charAt(0).toUpperCase() is first_char
       .sample(1)
       .first()
       .value()
 
-    first_char = random_thing.charAt(0) unless first_char
+    first_char = random_thing.charAt(0).toUpperCase() unless first_char
     return random_thing
 
   .join(" ").split(" ")
