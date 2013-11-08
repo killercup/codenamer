@@ -11,15 +11,32 @@ parts_ = [0..PARTS-1]
 cats = window.categories
 
 name_parts = rx.array _(cats).chain().keys().sample(PARTS).value()
+$alliterate = null
 
 final_name = bind ->
   return console.error name_parts, 'is not cool' unless name_parts?.all?()?.length
+
+  alliterate = $alliterate?.rx?('checked')?.get?() || false
+  first_char = false
 
   name_parts.all()
   .map (cat) ->
     vals = cats[cat]?.values
     return unless vals?.length
-    _.sample(vals, 1)[0]
+
+    random_thing = _.chain(vals)
+      .filter (input) ->
+        if !alliterate or !first_char
+          true
+        else
+          input.charAt(0) is first_char
+      .sample(1)
+      .first()
+      .value()
+
+    first_char = random_thing.charAt(0) unless first_char
+    return random_thing
+
   .join(" ").split(" ")
   .map(_.str.capitalize)
   .join(" ")
@@ -74,6 +91,14 @@ selects = (name_parts, final_name) ->
           ]
 
           div {class: 'help-block'}, "Click it again!"
+        ]
+        div {class: 'form-group'}, [
+          label {for: 'alliterate'}, [
+            $alliterate = input {type: 'checkbox', id: 'alliterate'}
+            " Alliterate"
+          ]
+
+          div {class: 'help-block'}, "Same first characters"
         ]
       ]
     ]
