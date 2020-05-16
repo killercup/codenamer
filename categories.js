@@ -2017,5 +2017,39 @@ var categories = {
       "Einwand",
       "Flaschenpost"
     ]
+  },
+  "minecraft_mobs": {
+    "name": "Minecraft Mobs",
+    "source": "http://https://www.digminecraft.com/mobs/index.php/",
+    "values": [
+      "Blaze",
+      "Creeper",
+      "Drowned",
+      "Guardian",
+      "Ender Dragon",
+      "Endermite",
+      "Evoker",
+      "Ghast",
+      "Hoglin",
+      "Husk",
+      "Illusioner",
+      "Phantom",
+      "Magma Cube",
+      "Pigman",
+      "Piglin",
+      "Pillager",
+      "Ravager",
+      "Silverfish",
+      "Shulker",
+      "Skeleton",
+      "Slime",
+      "Stray",
+      "Vex",
+      "Vindicator",
+      "Witch",
+      "Wither",
+      "Zoglin",
+      "Zombie"
+    ]
   }
 };
