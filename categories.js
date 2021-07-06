@@ -478,7 +478,7 @@ var categories = {
       "hypochlorite",
       "bitartrate",
       "thiophosphate",
-      "crystal ",
+      "crystal ",
       "ferricyanide",
       "formaldehyd",
       "linseed",
